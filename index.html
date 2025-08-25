@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kamil Shah — Creative Writer & Digital Storyteller</title>
+  <meta name="description" content="Portfolio of Kamil Shah — creative writer, content strategist, and digital storyteller specializing in compelling narratives across formats." />
+  <link rel="canonical" href="https://your-domain.example/" />
+  <meta name="theme-color" content="#0f1c2c" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Kamil Shah — Creative Writer & Digital Storyteller" />
+  <meta property="og:description" content="Compelling narratives for brands, products, and people. Long‑form, technical docs, brand voice, and fiction." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b1020;         /* deep navy for hero/footer */
+      --surface: #ffffff;     /* cards & main text surfaces */
+      --muted-surface:#f6f7fb;
+      --text: #1b2636;        /* body text */
+      --muted:#6b7a90;        /* secondary text */
+      --blue:#2563eb;         /* primary */
+      --red:#ef4444;          /* accent */
+      --ring: rgba(37,99,235,.35);
+      --radius:14px;
+      --shadow-xs:0 2px 10px rgba(0,0,0,.06);
+      --shadow-sm:0 8px 30px rgba(0,0,0,.10);
+      --shadow-md:0 16px 50px rgba(0,0,0,.16);
+      --transition: all .25s cubic-bezier(.2,.8,.2,1);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#f9fbff 0%, #f3f6ff 18%, #fff 100%);
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    .container{max-width:1120px;margin:0 auto;padding:0 24px}
+    .section{padding:88px 0}
+    h1,h2,h3{letter-spacing:-.02em}
+    h1{font-weight:700;font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.15}
+    h2{font-weight:650;font-size:clamp(1.65rem,2.8vw,2.25rem)}
+    h3{font-weight:600;font-size:1.25rem}
+    p{color:var(--muted);font-size:1.05rem}
+
+    /* Skip link for a11y */
+    .skip{position:absolute;inset-inline-start:12px;top:-48px;background:#fff;color:#111;padding:8px 12px;border-radius:8px;box-shadow:var(--shadow-xs);transition:top .2s}
+    .skip:focus{top:12px;outline:3px solid var(--ring)}
+
+    /* Navbar */
+    .nav{position:fixed;inset:0 0 auto; height:72px; backdrop-filter:saturate(140%) blur(14px); background:rgba(255,255,255,.78); border-bottom:1px solid rgba(15,27,44,.07); z-index:40; transition:var(--transition)}
+    .nav.scrolled{background:rgba(255,255,255,.95); box-shadow:0 6px 22px rgba(13,25,43,.08)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:10px;align-items:center;text-decoration:none;color:#0f1b2c;font-weight:800;font-size:1.2rem}
+    .badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#eef2ff;color:#3b5ccc;font-weight:700;font-size:.78rem}
+    .links{display:flex;gap:22px;align-items:center}
+    .links a{color:var(--muted);text-decoration:none;font-weight:600}
+    .links a:hover{color:var(--blue)}
+    .menu-btn{display:none;border:0;background:transparent;cursor:pointer}
+
+    /* Hero */
+    .hero{background: radial-gradient(1200px 600px at 70% -10%, #1c2b4a 0%, #101a2f 45%, #0b1020 100%); color:#eaf0ff; padding-top:120px; padding-bottom:80px; position:relative; overflow:hidden}
+    .hero .glow{position:absolute; inset:auto -20% -40% -20%; height:380px; background:radial-gradient(60% 80% at 50% 0%, rgba(37,99,235,.35), transparent 70%)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr; gap:40px; align-items:center}
+    .hero h1{color:#fff;margin:0 0 14px}
+    .sub{font-size:1.2rem;color:#c9d6ff;margin:0 0 18px}
+    .lede{max-width:640px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .btn{appearance:none;border:1px solid transparent;border-radius:12px;padding:12px 18px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:var(--transition)}
+    .btn:focus-visible{outline:3px solid var(--ring)}
+    .btn-primary{background:#fff;color:#0e1726; box-shadow:var(--shadow-sm)}
+    .btn-primary:hover{transform:translateY(-2px); box-shadow:var(--shadow-md)}
+    .btn-ghost{background:transparent;border-color:rgba(255,255,255,.22); color:#eaf0ff}
+    .btn-ghost:hover{background:rgba(255,255,255,.08)}
+    .hero-card{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.18); padding:18px;border-radius:14px}
+
+    /* About */
+    .about{background:#fff}
+    .about-grid{display:grid;grid-template-columns:1fr 1.4fr; gap:48px; align-items:center}
+    .about-art{height:360px;border-radius:var(--radius); background:linear-gradient(135deg, rgba(37,99,235,.12), rgba(239,68,68,.12)); position:relative; overflow:hidden}
+    .about-art::after{content:'✍️';position:absolute;inset:0;display:grid;place-items:center;font-size:120px;opacity:.2}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:#eef2ff;color:#3b5ccc;font-weight:700;font-size:.8rem}
+    .skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:18px}
+    .skill{display:flex;align-items:center;gap:8px;color:var(--text);font-weight:600}
+    .skill::before{content:'▸';color:var(--blue)}
+
+    /* Work */
+    .work{background:var(--muted-surface)}
+    .work-head{text-align:center; margin-bottom:36px}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:22px}
+    .card{background:var(--surface); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-xs); transition:var(--transition)}
+    .card:hover{transform:translateY(-6px); box-shadow:var(--shadow-sm)}
+    .card-hero{height:168px; background:linear-gradient(135deg,#334155,#0ea5e9); position:relative}
+    .card-hero::before{content:''; position:absolute; inset:0; background:radial-gradient(120% 100% at 100% 0, rgba(255,255,255,.2), transparent 60%)}
+    .card-body{padding:20px}
+    .tags{display:flex;flex-wrap:wrap; gap:8px; margin:10px 0 16px}
+    .tag{font-size:.82rem; font-weight:700; padding:6px 10px; border-radius:999px; background:#eef2ff; color:#384b7b}
+    .link{display:inline-flex;align-items:center;gap:8px; text-decoration:none; color:var(--blue); font-weight:800}
+    .link:hover{gap:12px}
+
+    /* Contact */
+    .contact{background:var(--bg); color:#dce6ff; text-align:center}
+    .contact h2{color:#fff}
+    .contact p{color:#c9d6ff}
+    .contact .actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:22px}
+    .contact a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.18); padding:10px 14px; border-radius:12px; font-weight:700}
+    .contact a:hover{background:rgba(255,255,255,.08)}
+
+    /* Footer */
+    footer{background:#070c16; color:#90a4d4; text-align:center; padding:22px 0}
+
+    /* Utilities & motion */
+    .fade{opacity:0; transform:translateY(20px); transition:transform .7s ease, opacity .7s ease}
+    .fade.show{opacity:1; transform:none}
+    @media (max-width: 960px){
+      .hero-grid, .about-grid{grid-template-columns:1fr}
+      .menu-btn{display:inline-flex}
+      .links{display:none}
+      .links.open{display:flex; position:absolute; top:72px; right:16px; flex-direction:column; background:#fff; padding:12px; border-radius:12px; box-shadow:var(--shadow-sm)}
+    }
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto!important}
+      .fade{transition:none}
+      .btn-primary:hover, .card:hover{transform:none}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kamil Shah",
+    "url": "https://your-domain.example/",
+    "jobTitle": "Creative Writer & Content Strategist",
+    "sameAs": ["https://www.linkedin.com/in/kamilshah", "https://github.com/kamilshah360-cloud"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#" aria-label="Kamil Shah home">
+        <span aria-hidden="true" class="badge">KS</span>
+        Kamil&nbsp;Shah
+      </a>
+      <nav aria-label="Primary">
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">☰<span class="sr-only"></span></button>
+        <div class="links" id="menu">
+          <a href="#about">About</a>
+          <a href="#work">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div>
+          <h1 class="fade">Creative Writer & Digital Storyteller</h1>
+          <p class="sub fade">Narratives that connect audiences to ideas, products, and brands.</p>
+          <p class="lede fade">I craft long‑form essays, technical documentation, brand voice systems, and fiction — always with clarity, empathy, and measurable purpose.</p>
+          <div class="cta fade">
+            <a class="btn btn-primary" href="#work">View my work</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <aside class="hero-card fade" aria-label="Highlights">
+          <strong>Highlights</strong>
+          <ul style="margin:8px 0 0 18px;color:#d7e3ff">
+            <li>Brand narratives that lift engagement 3×</li>
+            <li>Readable technical guides for non‑engineers</li>
+            <li>Creative fiction published in indie zines</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="container about-grid">
+        <div class="about-art" role="img" aria-label="Writing themed artwork"></div>
+        <div>
+          <span class="pill" aria-hidden="true">About</span>
+          <h2>Hi, I’m Kamil.</h2>
+          <p>I combine creative writing with content strategy, technical clarity, and design sensibility. My background in workflow automation and social media helps me deliver writing that is persuasive <em>and</em> purposeful.</p>
+          <p>Every piece earns its place: educate, inspire, or convert. Tone adapts by audience, but the principles stay the same — precise language, relatable structure, and strong narrative arcs.</p>
+          <div class="skills">
+            <div class="skill">Creative & literary</div>
+            <div class="skill">Brand storytelling</div>
+            <div class="skill">Technical documentation</div>
+            <div class="skill">Content strategy</div>
+            <div class="skill">Marketing & web copy</div>
+            <div class="skill">Social writing & threads</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="work section" id="work">
+      <div class="container">
+        <div class="work-head fade">
+          <h2>Featured Work</h2>
+          <p>A curated mix that shows range — business, technical, brand, and fiction.</p>
+        </div>
+        <div class="grid">
+          <article class="card fade">
+            <div class="card-hero" aria-hidden="true"></div>
+            <div class="card-body">
+              <h3>The Future of Remote Collaboration</h3>
+              <p>Long‑form analysis on hybrid work with interviews, frameworks, and actionable conclusions for leaders.</p>
+              <div class="tags">
+                <span class="tag">Long‑form</span><span class="tag">Business</span><span class="tag">Research</span>
+              </div>
+              <a class="link" href="#" aria-label="Read article The Future of Remote Collaboration">Read article →</a>
+            </div>
+          </article>
+
+          <article class="card fade">
+            <div class="card-hero" aria-hidden="true"></div>
+            <div class="card-body">
+              <h3>Midnight at the Code Café</h3>
+              <p>Short fiction about technology and connection — a late‑night encounter that reframes what “signal” means.</p>
+              <div class="tags">
+                <span class="tag">Fiction</span><span class="tag">Culture</span><span class="tag">Short</span>
+              </div>
+              <a class="link" href="#">Read story →</a>
+            </div>
+          </article>
+
+          <article class="card fade">
+            <div class="card-hero" aria-hidden="true"></div>
+            <div class="card-body">
+              <h3>EcoStyle Brand Narrative</h3>
+              <p>Voice, mission, website copy, and social pillars for a sustainable fashion startup; engagement up 3.4×.</p>
+              <div class="tags">
+                <span class="tag">Brand</span><span class="tag">Copy</span><span class="tag">Sustainability</span>
+              </div>
+              <a class="link" href="#">View campaign →</a>
+            </div>
+          </article>
+
+          <article class="card fade">
+            <div class="card-hero" aria-hidden="true"></div>
+            <div class="card-body">
+              <h3>Automation Workflow Guide</h3>
+              <p>Plain‑English technical docs for GoHighLevel automations so non‑engineers can ship reliable workflows.</p>
+              <div class="tags">
+                <span class="tag">Technical</span><span class="tag">Docs</span><span class="tag">Automation</span>
+              </div>
+              <a class="link" href="#">View guide →</a>
+            </div>
+          </article>
+
+          <article class="card fade">
+            <div class="card-hero" aria-hidden="true"></div>
+            <div class="card-body">
+              <h3>Creative Writing Workshop Series</h3>
+              <p>Exercises and community prompts that help emerging writers find voice and structure.</p>
+              <div class="tags">
+                <span class="tag">Education</span><span class="tag">Creative</span><span class="tag">Community</span>
+              </div>
+              <a class="link" href="#">Explore series →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="container fade">
+        <h2>Let’s create something great</h2>
+        <p>Have a project, product, or story to shape? I’m available for brand voice, long‑form content, technical docs, and editorial work.</p>
+        <div class="actions" role="list">
+          <a role="listitem" href="mailto:kamilshah@example.com" aria-label="Email Kamil">📧&nbsp; kamilshah@example.com</a>
+          <a role="listitem" href="https://www.linkedin.com/in/kamilshah" target="_blank" rel="noopener">💼&nbsp; LinkedIn</a>
+          <a role="listitem" href="https://github.com/kamilshah360-cloud" target="_blank" rel="noopener">⚡&nbsp; GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Kamil Shah. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+    menuBtn?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+
+    // nav scroll state
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      if (window.scrollY > 8) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+    document.addEventListener('scroll', onScroll, {passive: true}); onScroll();
+
+    // fade-ins
+    const io = new IntersectionObserver((entries)=>{
+      for (const e of entries){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} }
+    }, {threshold:.12, rootMargin:'0px 0px -80px 0px'});
+    document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
