@@ -1,322 +1,875 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kamil Shah — Creative Writer & Digital Storyteller</title>
-  <meta name="description" content="Portfolio of Kamil Shah — creative writer, content strategist, and digital storyteller specializing in compelling narratives across formats." />
-  <link rel="canonical" href="https://your-domain.example/" />
-  <meta name="theme-color" content="#0f1c2c" />
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Kamil Shah — Creative Writer & Digital Storyteller" />
-  <meta property="og:description" content="Compelling narratives for brands, products, and people. Long‑form, technical docs, brand voice, and fiction." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg: #0b1020;         /* deep navy for hero/footer */
-      --surface: #ffffff;     /* cards & main text surfaces */
-      --muted-surface:#f6f7fb;
-      --text: #1b2636;        /* body text */
-      --muted:#6b7a90;        /* secondary text */
-      --blue:#2563eb;         /* primary */
-      --red:#ef4444;          /* accent */
-      --ring: rgba(37,99,235,.35);
-      --radius:14px;
-      --shadow-xs:0 2px 10px rgba(0,0,0,.06);
-      --shadow-sm:0 8px 30px rgba(0,0,0,.10);
-      --shadow-md:0 16px 50px rgba(0,0,0,.16);
-      --transition: all .25s cubic-bezier(.2,.8,.2,1);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0}
-    body{
-      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      color:var(--text);
-      background:linear-gradient(180deg,#f9fbff 0%, #f3f6ff 18%, #fff 100%);
-      line-height:1.65;
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-    }
-    .container{max-width:1120px;margin:0 auto;padding:0 24px}
-    .section{padding:88px 0}
-    h1,h2,h3{letter-spacing:-.02em}
-    h1{font-weight:700;font-size:clamp(2.25rem,4.5vw,3.5rem);line-height:1.15}
-    h2{font-weight:650;font-size:clamp(1.65rem,2.8vw,2.25rem)}
-    h3{font-weight:600;font-size:1.25rem}
-    p{color:var(--muted);font-size:1.05rem}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamil Shah - CV</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Skip link for a11y */
-    .skip{position:absolute;inset-inline-start:12px;top:-48px;background:#fff;color:#111;padding:8px 12px;border-radius:8px;box-shadow:var(--shadow-xs);transition:top .2s}
-    .skip:focus{top:12px;outline:3px solid var(--ring)}
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
 
-    /* Navbar */
-    .nav{position:fixed;inset:0 0 auto; height:72px; backdrop-filter:saturate(140%) blur(14px); background:rgba(255,255,255,.78); border-bottom:1px solid rgba(15,27,44,.07); z-index:40; transition:var(--transition)}
-    .nav.scrolled{background:rgba(255,255,255,.95); box-shadow:0 6px 22px rgba(13,25,43,.08)}
-    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:10px;align-items:center;text-decoration:none;color:#0f1b2c;font-weight:800;font-size:1.2rem}
-    .badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#eef2ff;color:#3b5ccc;font-weight:700;font-size:.78rem}
-    .links{display:flex;gap:22px;align-items:center}
-    .links a{color:var(--muted);text-decoration:none;font-weight:600}
-    .links a:hover{color:var(--blue)}
-    .menu-btn{display:none;border:0;background:transparent;cursor:pointer}
+        .cv-container {
+            max-width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: #ffffff;
+            display: flex;
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+        }
 
-    /* Hero */
-    .hero{background: radial-gradient(1200px 600px at 70% -10%, #1c2b4a 0%, #101a2f 45%, #0b1020 100%); color:#eaf0ff; padding-top:120px; padding-bottom:80px; position:relative; overflow:hidden}
-    .hero .glow{position:absolute; inset:auto -20% -40% -20%; height:380px; background:radial-gradient(60% 80% at 50% 0%, rgba(37,99,235,.35), transparent 70%)}
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr; gap:40px; align-items:center}
-    .hero h1{color:#fff;margin:0 0 14px}
-    .sub{font-size:1.2rem;color:#c9d6ff;margin:0 0 18px}
-    .lede{max-width:640px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-    .btn{appearance:none;border:1px solid transparent;border-radius:12px;padding:12px 18px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:var(--transition)}
-    .btn:focus-visible{outline:3px solid var(--ring)}
-    .btn-primary{background:#fff;color:#0e1726; box-shadow:var(--shadow-sm)}
-    .btn-primary:hover{transform:translateY(-2px); box-shadow:var(--shadow-md)}
-    .btn-ghost{background:transparent;border-color:rgba(255,255,255,.22); color:#eaf0ff}
-    .btn-ghost:hover{background:rgba(255,255,255,.08)}
-    .hero-card{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.18); padding:18px;border-radius:14px}
+        .cv-container.expanded {
+            max-width: 1200px;
+        }
 
-    /* About */
-    .about{background:#fff}
-    .about-grid{display:grid;grid-template-columns:1fr 1.4fr; gap:48px; align-items:center}
-    .about-art{height:360px;border-radius:var(--radius); background:linear-gradient(135deg, rgba(37,99,235,.12), rgba(239,68,68,.12)); position:relative; overflow:hidden}
-    .about-art::after{content:'✍️';position:absolute;inset:0;display:grid;place-items:center;font-size:120px;opacity:.2}
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:#eef2ff;color:#3b5ccc;font-weight:700;font-size:.8rem}
-    .skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:18px}
-    .skill{display:flex;align-items:center;gap:8px;color:var(--text);font-weight:600}
-    .skill::before{content:'▸';color:var(--blue)}
+        .cv-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00d4aa, #00b4d8, #0077b6, #023e8a);
+            z-index: 10;
+        }
 
-    /* Work */
-    .work{background:var(--muted-surface)}
-    .work-head{text-align:center; margin-bottom:36px}
-    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:22px}
-    .card{background:var(--surface); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-xs); transition:var(--transition)}
-    .card:hover{transform:translateY(-6px); box-shadow:var(--shadow-sm)}
-    .card-hero{height:168px; background:linear-gradient(135deg,#334155,#0ea5e9); position:relative}
-    .card-hero::before{content:''; position:absolute; inset:0; background:radial-gradient(120% 100% at 100% 0, rgba(255,255,255,.2), transparent 60%)}
-    .card-body{padding:20px}
-    .tags{display:flex;flex-wrap:wrap; gap:8px; margin:10px 0 16px}
-    .tag{font-size:.82rem; font-weight:700; padding:6px 10px; border-radius:999px; background:#eef2ff; color:#384b7b}
-    .link{display:inline-flex;align-items:center;gap:8px; text-decoration:none; color:var(--blue); font-weight:800}
-    .link:hover{gap:12px}
+        .sidebar {
+            width: 38%;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+            color: white;
+            padding: 40px 32px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
 
-    /* Contact */
-    .contact{background:var(--bg); color:#dce6ff; text-align:center}
-    .contact h2{color:#fff}
-    .contact p{color:#c9d6ff}
-    .contact .actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:22px}
-    .contact a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.18); padding:10px 14px; border-radius:12px; font-weight:700}
-    .contact a:hover{background:rgba(255,255,255,.08)}
+        .cv-container.expanded .sidebar {
+            width: 28%;
+        }
 
-    /* Footer */
-    footer{background:#070c16; color:#90a4d4; text-align:center; padding:22px 0}
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
 
-    /* Utilities & motion */
-    .fade{opacity:0; transform:translateY(20px); transition:transform .7s ease, opacity .7s ease}
-    .fade.show{opacity:1; transform:none}
-    @media (max-width: 960px){
-      .hero-grid, .about-grid{grid-template-columns:1fr}
-      .menu-btn{display:inline-flex}
-      .links{display:none}
-      .links.open{display:flex; position:absolute; top:72px; right:16px; flex-direction:column; background:#fff; padding:12px; border-radius:12px; box-shadow:var(--shadow-sm)}
-    }
-    @media (prefers-reduced-motion: reduce){
-      *{scroll-behavior:auto!important}
-      .fade{transition:none}
-      .btn-primary:hover, .card:hover{transform:none}
-    }
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Kamil Shah",
-    "url": "https://your-domain.example/",
-    "jobTitle": "Creative Writer & Content Strategist",
-    "sameAs": ["https://www.linkedin.com/in/kamilshah", "https://github.com/kamilshah360-cloud"]
-  }
-  </script>
+        .main-content {
+            width: 62%;
+            padding: 40px 36px;
+            background: #ffffff;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .cv-container.expanded .main-content {
+            width: 72%;
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .title {
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 32px;
+            opacity: 0.85;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.4;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #0f172a;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #06b6d4);
+            border-radius: 2px;
+        }
+
+        .sidebar .section-title {
+            color: white;
+            font-size: 14px;
+        }
+
+        .sidebar .section-title::after {
+            background: linear-gradient(90deg, #60a5fa, #34d399);
+        }
+
+        .contact-info {
+            margin-bottom: 32px;
+        }
+
+        .contact-item {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            word-break: break-all;
+            min-height: 40px;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .contact-icon {
+            width: 20px;
+            margin-right: 10px;
+            text-align: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            font-size: 12px;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .skills-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .skills-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding: 8px 16px 8px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            border-left: 3px solid #60a5fa;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skills-list li:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(4px);
+        }
+
+        .skills-list li::before {
+            content: "→";
+            position: absolute;
+            left: 8px;
+            color: #60a5fa;
+            font-weight: bold;
+        }
+
+        .education-item {
+            margin-bottom: 24px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .degree {
+            font-weight: 600;
+            font-size: 14px;
+            color: #60a5fa;
+            margin-bottom: 4px;
+        }
+
+        .university {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-bottom: 2px;
+        }
+
+        .year {
+            font-size: 11px;
+            opacity: 0.7;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .portfolio-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .portfolio-links a:hover {
+            background: rgba(96, 165, 250, 0.1);
+            transform: translateY(-1px);
+            border-color: #60a5fa;
+        }
+
+        .summary {
+            margin-bottom: 36px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #374151;
+            padding: 24px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+            position: relative;
+        }
+
+        .summary::before {
+            content: '"';
+            font-size: 48px;
+            color: #3b82f6;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 16px;
+            font-family: Georgia, serif;
+        }
+
+        .experience-item {
+            margin-bottom: 32px;
+            padding: 24px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            border-radius: 2px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .job-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 4px;
+            letter-spacing: -0.01em;
+        }
+
+        .company {
+            font-size: 15px;
+            color: #3b82f6;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .duration {
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 500;
+            background: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .job-description {
+            margin-top: 16px;
+            color: #475569;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .achievements li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 24px;
+            color: #374151;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .achievements li::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-size: 12px;
+            top: 2px;
+        }
+
+        .achievements li:hover {
+            color: #1f2937;
+        }
+
+        /* Cold Email Samples Section */
+        .email-samples-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .email-samples-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .email-samples-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .email-samples-overlay.active .email-samples-container {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .email-samples-header {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .email-samples-header h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .email-samples-header p {
+            font-size: 14px;
+            opacity: 0.85;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .email-samples-content {
+            padding: 30px;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .email-intro {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .email-intro::before {
+            content: '"';
+            font-size: 36px;
+            color: #3b82f6;
+            opacity: 0.2;
+            position: absolute;
+            top: 8px;
+            left: 12px;
+            font-family: Georgia, serif;
+        }
+
+        .email-intro p {
+            font-size: 14px;
+            color: #374151;
+            line-height: 1.7;
+        }
+
+        .email-sample {
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .email-sample::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+        }
+
+        .email-sample-header {
+            background: #f8fafc;
+            padding: 16px 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .email-sample-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+
+        .email-sample-meta {
+            font-size: 12px;
+            color: #64748b;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .email-sample-body {
+            padding: 20px;
+        }
+
+        .email-subject {
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .email-subject strong {
+            color: #92400e;
+            font-size: 13px;
+        }
+
+        .email-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #374151;
+            white-space: pre-line;
+        }
+
+        .email-content strong {
+            color: #1f2937;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .experience-item {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .experience-item:nth-child(1) { animation-delay: 0.1s; }
+        .experience-item:nth-child(2) { animation-delay: 0.2s; }
+        .experience-item:nth-child(3) { animation-delay: 0.3s; }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .cv-container {
+                margin: 0;
+                box-shadow: none;
+                max-width: none;
+                width: 100%;
+                border-radius: 0;
+            }
+            .experience-item:hover,
+            .contact-item:hover,
+            .skills-list li:hover {
+                transform: none;
+            }
+            .email-samples-overlay {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="nav" id="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#" aria-label="Kamil Shah home">
-        <span aria-hidden="true" class="badge">KS</span>
-        Kamil&nbsp;Shah
-      </a>
-      <nav aria-label="Primary">
-        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">☰<span class="sr-only"></span></button>
-        <div class="links" id="menu">
-          <a href="#about">About</a>
-          <a href="#work">Portfolio</a>
-          <a href="#contact">Contact</a>
+    <div class="cv-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="name">Kamil Shah</div>
+            <div class="title">Cold Email Copywriter • Graphic Designer • Creative Writer</div>
+
+            <div class="section-title">Contact</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span class="contact-text">kamilshah360@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span class="contact-text">+923202756651</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span class="contact-text">Hyderabad, Sindh, PK</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💼</span>
+                    <span class="contact-text">@sultanshah360</span>
+                </div>
+            </div>
+
+            <div class="section-title">Core Skills</div>
+            <ul class="skills-list">
+                <li>Cold Email Copywriting</li>
+                <li>Graphic Design</li>
+                <li>Content Creation & Research</li>
+                <li>Creative Writing</li>
+                <li>Adobe Photoshop</li>
+                <li>Adobe Illustrator</li>
+                <li>Canva Pro</li>
+                <li>B2B Lead Generation</li>
+                <li>Email Campaign Strategy</li>
+            </ul>
+
+            <div class="section-title">Technical Skills</div>
+            <ul class="skills-list">
+                <li>Google Workspace</li>
+                <li>Social Media Platforms</li>
+                <li>Content Management</li>
+                <li>Brand Identity Design</li>
+                <li>Digital & Print Media</li>
+                <li>Strong Communication</li>
+            </ul>
+
+            <div class="section-title">Education</div>
+            <div class="education-item">
+                <div class="degree">Intermediate, Computer Science</div>
+                <div class="university">Fazaia College, PAF Base Masroor</div>
+                <div class="year">2017 - 2019</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">Matriculation, Computer Science</div>
+                <div class="university">SM Public School</div>
+                <div class="year">2015 - 2017</div>
+            </div>
+
+            <div class="section-title">Languages</div>
+            <ul class="skills-list">
+                <li>English - Fluent</li>
+                <li>Urdu - Native</li>
+            </ul>
+
+            <div class="section-title">Portfolio</div>
+            <div class="portfolio-links">
+                <a href="https://www.behance.net/kamilshah2001" target="_blank">Behance Portfolio</a>
+                <a href="#" onclick="showEmailSamples()">Cold Email Samples</a>
+            </div>
         </div>
-      </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="section-title">Professional Summary</div>
+            <div class="summary">
+                Highly motivated creative professional with expertise in cold email copywriting, graphic design, and content creation. Fluent in both creativity and strategy, with a proven track record of producing compelling visual and written content that drives engagement and results. Experienced in healthcare technology messaging, brand development, and multi-platform content strategies.
+            </div>
+
+            <div class="section-title">Professional Experience</div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Graphic Designer | Writer</div>
+                        <div class="company">Trilops, LLC</div>
+                    </div>
+                    <div class="duration">March 2024 - Present</div>
+                </div>
+                <div class="job-description">
+                    Create visually appealing designs for digital and print media while producing high-quality written content including cold email campaigns for healthcare technology clients.
+                </div>
+                <ul class="achievements">
+                    <li>Created visually appealing designs for digital and print media, ensuring alignment with brand identity and goals</li>
+                    <li>Produced high-quality written content for blogs, social media, and websites, tailored to target audiences</li>
+                    <li>Developed specialized cold email campaigns for healthcare technology solutions targeting hospital CIOs and clinic operations</li>
+                    <li>Integrated EMR workflow solutions into email messaging, resulting in improved client adoption rates</li>
+                    <li>Maintained brand consistency across all visual and written communications</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Content Researcher | Creative Writer</div>
+                        <div class="company">Elderberry Media</div>
+                    </div>
+                    <div class="duration">September 2023 - March 2024</div>
+                </div>
+                <div class="job-description">
+                    Led content strategy and creative development for social media platforms, focusing on engaging and shareable content across multiple channels.
+                </div>
+                <ul class="achievements">
+                    <li>Conceptualized, produced, and managed a successful Snapchat show</li>
+                    <li>Produced compelling and shareable TikTok content to improve brand personality and engagement</li>
+                    <li>Conducted comprehensive content research to identify trending topics and audience preferences</li>
+                    <li>Developed creative writing strategies that increased social media engagement</li>
+                    <li>Collaborated with cross-functional teams to ensure content alignment with brand objectives</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Student Brand Ambassador</div>
+                        <div class="company">NFLP-Y by State Bank of Pakistan</div>
+                    </div>
+                    <div class="duration">June 2022 - October 2022</div>
+                </div>
+                <div class="job-description">
+                    4-month virtual internship focused on youth engagement and financial education outreach strategies.
+                </div>
+                <ul class="achievements">
+                    <li>Implemented outreach strategies to effectively engage youth audiences</li>
+                    <li>Generated interest in financial education initiatives through targeted campaigns</li>
+                    <li>Developed communication materials for diverse youth demographics</li>
+                    <li>Collaborated with team members to execute successful awareness programs</li>
+                    <li>Gained experience in financial sector marketing and public outreach</li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </header>
 
-  <main id="main">
-    <section class="hero">
-      <div class="glow" aria-hidden="true"></div>
-      <div class="container hero-grid">
-        <div>
-          <h1 class="fade">Creative Writer & Digital Storyteller</h1>
-          <p class="sub fade">Narratives that connect audiences to ideas, products, and brands.</p>
-          <p class="lede fade">I craft long‑form essays, technical documentation, brand voice systems, and fiction — always with clarity, empathy, and measurable purpose.</p>
-          <div class="cta fade">
-            <a class="btn btn-primary" href="#work">View my work</a>
-            <a class="btn btn-ghost" href="#contact">Get in touch</a>
-          </div>
-        </div>
-        <aside class="hero-card fade" aria-label="Highlights">
-          <strong>Highlights</strong>
-          <ul style="margin:8px 0 0 18px;color:#d7e3ff">
-            <li>Brand narratives that lift engagement 3×</li>
-            <li>Readable technical guides for non‑engineers</li>
-            <li>Creative fiction published in indie zines</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <section class="about section" id="about">
-      <div class="container about-grid">
-        <div class="about-art" role="img" aria-label="Writing themed artwork"></div>
-        <div>
-          <span class="pill" aria-hidden="true">About</span>
-          <h2>Hi, I’m Kamil.</h2>
-          <p>I combine creative writing with content strategy, technical clarity, and design sensibility. My background in workflow automation and social media helps me deliver writing that is persuasive <em>and</em> purposeful.</p>
-          <p>Every piece earns its place: educate, inspire, or convert. Tone adapts by audience, but the principles stay the same — precise language, relatable structure, and strong narrative arcs.</p>
-          <div class="skills">
-            <div class="skill">Creative & literary</div>
-            <div class="skill">Brand storytelling</div>
-            <div class="skill">Technical documentation</div>
-            <div class="skill">Content strategy</div>
-            <div class="skill">Marketing & web copy</div>
-            <div class="skill">Social writing & threads</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="work section" id="work">
-      <div class="container">
-        <div class="work-head fade">
-          <h2>Featured Work</h2>
-          <p>A curated mix that shows range — business, technical, brand, and fiction.</p>
-        </div>
-        <div class="grid">
-          <article class="card fade">
-            <div class="card-hero" aria-hidden="true"></div>
-            <div class="card-body">
-              <h3>The Future of Remote Collaboration</h3>
-              <p>Long‑form analysis on hybrid work with interviews, frameworks, and actionable conclusions for leaders.</p>
-              <div class="tags">
-                <span class="tag">Long‑form</span><span class="tag">Business</span><span class="tag">Research</span>
-              </div>
-              <a class="link" href="#" aria-label="Read article The Future of Remote Collaboration">Read article →</a>
+    <!-- Cold Email Samples Overlay -->
+    <div class="email-samples-overlay" id="emailSamplesOverlay" onclick="hideEmailSamples(event)">
+        <div class="email-samples-container" onclick="event.stopPropagation()">
+            <div class="email-samples-header">
+                <button class="close-button" onclick="hideEmailSamples()">×</button>
+                <h2>Cold Email Samples</h2>
+                <p>Healthcare Technology • B2B Outreach • Conversion-Focused</p>
             </div>
-          </article>
 
-          <article class="card fade">
-            <div class="card-hero" aria-hidden="true"></div>
-            <div class="card-body">
-              <h3>Midnight at the Code Café</h3>
-              <p>Short fiction about technology and connection — a late‑night encounter that reframes what “signal” means.</p>
-              <div class="tags">
-                <span class="tag">Fiction</span><span class="tag">Culture</span><span class="tag">Short</span>
-              </div>
-              <a class="link" href="#">Read story →</a>
-            </div>
-          </article>
+            <div class="email-samples-content">
+                <div class="email-intro">
+                    <p>These cold email samples showcase targeted outreach strategies for healthcare technology solutions. Each email is crafted to address specific pain points and demonstrate value proposition within the first few lines, resulting in higher open rates and engagement.</p>
+                </div>
 
-          <article class="card fade">
-            <div class="card-hero" aria-hidden="true"></div>
-            <div class="card-body">
-              <h3>EcoStyle Brand Narrative</h3>
-              <p>Voice, mission, website copy, and social pillars for a sustainable fashion startup; engagement up 3.4×.</p>
-              <div class="tags">
-                <span class="tag">Brand</span><span class="tag">Copy</span><span class="tag">Sustainability</span>
-              </div>
-              <a class="link" href="#">View campaign →</a>
-            </div>
-          </article>
+                <div class="email-sample">
+                    <div class="email-sample-header">
+                        <div class="email-sample-title">Hospital CIO - Telemedicine Adoption</div>
+                        <div class="email-sample-meta">Target: Hospital Decision Makers • Industry: Healthcare IT</div>
+                    </div>
+                    <div class="email-sample-body">
+                        <div class="email-subject">
+                            <strong>Subject:</strong> Quick idea for {{Hospital}}'s telehealth
+                        </div>
+                        <div class="email-content">Hi Patricia,
 
-          <article class="card fade">
-            <div class="card-hero" aria-hidden="true"></div>
-            <div class="card-body">
-              <h3>Automation Workflow Guide</h3>
-              <p>Plain‑English technical docs for GoHighLevel automations so non‑engineers can ship reliable workflows.</p>
-              <div class="tags">
-                <span class="tag">Technical</span><span class="tag">Docs</span><span class="tag">Automation</span>
-              </div>
-              <a class="link" href="#">View guide →</a>
-            </div>
-          </article>
+I saw {{hospital}} has been scaling telehealth. A lot of hospitals I talk to run into adoption plateaus until they tweak workflows around what doctors and patients actually use.
 
-          <article class="card fade">
-            <div class="card-hero" aria-hidden="true"></div>
-            <div class="card-body">
-              <h3>Creative Writing Workshop Series</h3>
-              <p>Exercises and community prompts that help emerging writers find voice and structure.</p>
-              <div class="tags">
-                <span class="tag">Education</span><span class="tag">Creative</span><span class="tag">Community</span>
-              </div>
-              <a class="link" href="#">Explore series →</a>
+At Trilops, we've helped teams lift adoption by <span class="highlight">about 30%</span> by plugging scheduling into their EMR, simplifying the visit flow, and making rollout painless on the IT side.
+
+If you tell me which EMR you're on, I can send a short deck with a couple of relevant tweaks. Worth it?
+
+Best,
+<strong>Kamil Shah</strong>
+Trilops</div>
+                    </div>
+                </div>
+
+                <div class="email-sample">
+                    <div class="email-sample-header">
+                        <div class="email-sample-title">Clinic Operations Director - Claims Processing</div>
+                        <div class="email-sample-meta">Target: Operations Management • Focus: Process Optimization</div>
+                    </div>
+                    <div class="email-sample-body">
+                        <div class="email-subject">
+                            <strong>Subject:</strong> Fewer resubmits on claims?
+                        </div>
+                        <div class="email-content">Hi {{FirstName}},
+
+Claims usually eat up way more time than they should.
+
+We recently helped a clinic cut resubmits by <span class="highlight">25%</span> just by connecting patient intake forms with their claims system.
+
+I think the same could work for {{Company}}.
+
+Want me to put together a quick walkthrough showing how it might look in your setup?
+
+Thanks,
+<strong>Kamil Shah</strong>
+Trilops</div>
+                    </div>
+                </div>
+
+                <div class="email-sample">
+                    <div class="email-sample-header">
+                        <div class="email-sample-title">Healthcare IT Manager - Cloud Migration</div>
+                        <div class="email-sample-meta">Target: IT Management • Focus: Infrastructure Modernization</div>
+                    </div>
+                    <div class="email-sample-body">
+                        <div class="email-subject">
+                            <strong>Subject:</strong> Favorite Color is 'BLACK'?
+                        </div>
+                        <div class="email-content">Hi {{FirstName}},
+
+<span class="highlight">Move EMR to cloud without downtime!</span>
+
+Running EMRs on-prem is a lot of patching and chasing performance issues.
+
+We've moved clinics to cloud setups that run smoother, scale easier, and stay compliant without extra admin overhead.
+
+Happy to sketch a short roadmap for how {{Company}} could make the shift.
+
+Interested?
+
+By the way, my favorite color is 'Black'!
+
+Cheers,
+<strong>Kamil Shah</strong>
+Trilops</div>
+                    </div>
+                </div>
             </div>
-          </article>
         </div>
-      </div>
-    </section>
+    </div>
 
-    <section class="contact section" id="contact">
-      <div class="container fade">
-        <h2>Let’s create something great</h2>
-        <p>Have a project, product, or story to shape? I’m available for brand voice, long‑form content, technical docs, and editorial work.</p>
-        <div class="actions" role="list">
-          <a role="listitem" href="mailto:kamilshah@example.com" aria-label="Email Kamil">📧&nbsp; kamilshah@example.com</a>
-          <a role="listitem" href="https://www.linkedin.com/in/kamilshah" target="_blank" rel="noopener">💼&nbsp; LinkedIn</a>
-          <a role="listitem" href="https://github.com/kamilshah360-cloud" target="_blank" rel="noopener">⚡&nbsp; GitHub</a>
-        </div>
-      </div>
-    </section>
-  </main>
+    <script>
+        function showEmailSamples() {
+            document.getElementById('emailSamplesOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
 
-  <footer>
-    <div class="container">© <span id="year"></span> Kamil Shah. All rights reserved.</div>
-  </footer>
+        function hideEmailSamples(event) {
+            if (!event || event.target === document.getElementById('emailSamplesOverlay')) {
+                document.getElementById('emailSamplesOverlay').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
 
-  <script>
-    // mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    const menu = document.getElementById('menu');
-    menuBtn?.addEventListener('click', () => {
-      const open = menu.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-    });
-
-    // nav scroll state
-    const nav = document.getElementById('nav');
-    const onScroll = () => {
-      if (window.scrollY > 8) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-    };
-    document.addEventListener('scroll', onScroll, {passive: true}); onScroll();
-
-    // fade-ins
-    const io = new IntersectionObserver((entries)=>{
-      for (const e of entries){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} }
-    }, {threshold:.12, rootMargin:'0px 0px -80px 0px'});
-    document.querySelectorAll('.fade').forEach(el=>io.observe(el));
-
-    // year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+        // Close overlay with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                hideEmailSamples();
+            }
+        });
+    </script>
 </body>
 </html>
